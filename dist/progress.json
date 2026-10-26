@@ -1,0 +1,76 @@
+{
+  "lastUpdated": "2026-10-26",
+  "student": "Najlae",
+  "targetScore": "655+",
+  "deadline": "2026-12-20T23:59:59",
+  "overallProgress": 15,
+  "quantFoundationProgress": 33,
+  "activeTopicCount": 7,
+  "weeklyTargetMinutes": 1680,
+  "hero": {
+    "camp": "Camp 1 · Foundations",
+    "summary": "Keep strengthening pattern recognition through high-yield mixed application. ChatGPT will guide the next study steps as your evidence changes."
+  },
+  "route": {
+    "next": "mixed recognition",
+    "stages": [
+      { "name": "Camp 1", "description": "Foundations · now" },
+      { "name": "Camp 2", "description": "Mixed application" },
+      { "name": "Camp 3", "description": "Timing & endurance" },
+      { "name": "Camp 4", "description": "Official mocks" },
+      { "name": "Summit", "description": "Stable 655 range" }
+    ]
+  },
+  "coverage": [
+    { "name": "Quant 80/20", "percent": 33 },
+    { "name": "Verbal", "percent": 0 },
+    { "name": "Data Insights", "percent": 0 }
+  ],
+  "timeByBranch": [
+    { "name": "Ratios", "minutes": 50 },
+    { "name": "Percentages", "minutes": 27 },
+    { "name": "Fractions", "minutes": 11 },
+    { "name": "Algebra & rates", "minutes": 18 }
+  ],
+  "topics": [
+    { "name": "Percentages", "status": "mastered enough for now · reverse, successive changes, multipliers, mental shortcuts and applied business questions", "tone": "mastered" },
+    { "name": "Ratios & proportions", "status": "strong · mostly mastered · totals, differences, shared terms, changing ratios and constant-side matching", "tone": "mastered" },
+    { "name": "Fractions", "status": "foundation mastered · operations, simplifying and applied word-problem practice ongoing", "tone": "mastered" },
+    { "name": "Word-problem recognition", "status": "in progress · identify the hidden mathematical tool before calculating", "tone": "developing" },
+    { "name": "Algebra", "status": "started · translate words to equations; medium/hard application next", "tone": "started" },
+    { "name": "Rates / distance", "status": "started · D = R × T, head starts and combined meeting speed", "tone": "started" },
+    { "name": "Work-rate problems", "status": "currently learning · LCM work units, units/hour, completed and remaining work", "tone": "developing" },
+    { "name": "Averages / weighted averages", "status": "not started", "tone": "not-started" },
+    { "name": "Number properties", "status": "not started", "tone": "not-started" },
+    { "name": "Exponents / roots / inequalities", "status": "not started", "tone": "not-started" },
+    { "name": "Statistics", "status": "not started", "tone": "not-started" },
+    { "name": "Probability", "status": "not started", "tone": "not-started" },
+    { "name": "Sets / combinations / sequences / mixtures", "status": "not started", "tone": "not-started" },
+    { "name": "Data Insights", "status": "not started", "tone": "not-started" },
+    { "name": "Verbal", "status": "not started", "tone": "not-started" },
+    { "name": "Timed Quant sets", "status": "not started", "tone": "not-started" },
+    { "name": "Full mock exams", "status": "not started", "tone": "not-started" }
+  ],
+  "recommendations": [
+    { "title": "Mixed word-problem recognition", "detail": "Identify the hidden mathematical tool before calculating", "priority": "Priority 1" },
+    { "title": "Work-rate problems", "detail": "Use LCM work units, add rates, then track completed and remaining work", "priority": "Priority 2" },
+    { "title": "Applied algebra", "detail": "Practice medium/hard GMAT translation rather than easy drills", "priority": "Next" },
+    { "title": "Rates / distance", "detail": "Recycle D = R × T, head starts, and combined meeting speed", "priority": "Mix in" },
+    { "title": "Mastered foundations", "detail": "Recycle percentages, ratios, and fractions inside mixed questions", "priority": "Maintain" },
+    { "title": "Averages & weighted averages", "detail": "Teach the high-yield rule and shortcut before practice", "priority": "Up next" }
+  ],
+  "studySessions": [
+    {
+      "date": "2026-10-25",
+      "minutes": 116,
+      "breakdown": "Percentages 27m · Ratios 50m · Fractions 11m · Word problems 10m · Algebra & rates 18m"
+    }
+  ],
+  "recentActivity": [
+    { "block": "Percentages · core and applied methods", "evidence": "Mastered for now" },
+    { "block": "Ratios · basic through changing ratios", "evidence": "Strong" },
+    { "block": "Fractions · operations and word problems", "evidence": "Foundation mastered" },
+    { "block": "Rates / distance · head-start meeting problem", "evidence": "Solved correctly" },
+    { "block": "Work rates · LCM work-unit method", "evidence": "Currently learning" }
+  ]
+}
