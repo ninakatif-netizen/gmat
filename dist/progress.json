@@ -1,19 +1,29 @@
 {
-  "lastUpdated": "2026-10-26",
+  "lastUpdated": "2026-10-27",
   "student": "Najlae",
   "targetScore": "655+",
   "deadline": "2026-12-20T23:59:59",
   "overallProgress": 15,
-  "quantFoundationProgress": 35,
-  "activeTopicCount": 9,
+  "quantFoundationProgress": 36,
+  "activeTopicCount": 10,
   "weeklyTargetMinutes": 1680,
-  "studyDays": ["2026-10-25", "2026-10-26"],
+  "studyDays": ["2026-10-25", "2026-10-26", "2026-10-27"],
   "hero": {
     "camp": "Camp 1 · Foundations",
-    "summary": "Use authentic medium and medium-hard GMAT wording. For each new pattern, learn the rule, wording translation, fastest method, safe backup, and common trap—then recycle it later without naming the topic."
+    "summary": "Main bottleneck: translating dense GMAT wording into the correct formula, ratio, or relationship. Recognition—not basic arithmetic—is the current priority."
+  },
+  "bottleneck": {
+    "title": "Main bottleneck: translating words into math",
+    "summary": "The formula is often known once the topic is recognized, but dense wording can hide the structure. Separate recognition from calculation and translate before solving.",
+    "drill": [
+      "Read one GMAT sentence and ignore the numbers initially.",
+      "Identify the hidden structure and translate it into a formula or ratio.",
+      "Progress from formula-only to formula-and-solve, then untitled problems.",
+      "Build toward timed recognition in about 10–20 seconds."
+    ]
   },
   "route": {
-    "next": "weighted-average transfer",
+    "next": "daily translation drill",
     "stages": [
       { "name": "Camp 1", "description": "Foundations · now" },
       { "name": "Camp 2", "description": "Mixed application" },
@@ -23,9 +33,9 @@
     ]
   },
   "coverage": [
-    { "name": "Quant 80/20", "percent": 35 },
+    { "name": "Quant 80/20", "percent": 36 },
     { "name": "Verbal", "percent": 0 },
-    { "name": "Data Insights", "percent": 0 }
+    { "name": "Data Insights", "percent": 5 }
   ],
   "timeByBranch": [
     { "name": "Ratios", "minutes": 50 },
@@ -48,17 +58,19 @@
     { "name": "Inequalities", "status": "not systematically covered", "tone": "not-started" },
     { "name": "Statistics / probability", "status": "not systematically covered", "tone": "not-started" },
     { "name": "Sets / combinations / sequences / mixtures", "status": "not started", "tone": "not-started" },
-    { "name": "Data Insights", "status": "not started", "tone": "not-started" },
+    { "name": "Data Sufficiency", "status": "framework understood · beginner/intermediate transfer · needs mixed-topic practice; recognize what the wording secretly describes", "tone": "developing" },
+    { "name": "Data Insights", "status": "started through Data Sufficiency · broader DI areas not systematically covered", "tone": "started" },
     { "name": "Verbal", "status": "not started", "tone": "not-started" },
     { "name": "Timed mixed Quant sets", "status": "not started", "tone": "not-started" },
     { "name": "Full mock exams", "status": "not started", "tone": "not-started" }
   ],
   "recommendations": [
-    { "title": "Weighted-average transfer", "detail": "Vary the unknown: subgroup size, subgroup average, overall average, group-size ratio, and before/after group changes. Do not repeat identical templates.", "priority": "Priority 1" },
-    { "title": "Inverse time/rate recognition", "detail": "Recycle the reciprocal ratio shortcut inside disguised work-rate problems; keep the full fractional equation as a backup.", "priority": "Priority 2" },
-    { "title": "Multi-step algebra + ratio + totals", "detail": "Use authentic business scenarios and the x → first group → ratio → second-group total → leftover sequence.", "priority": "Priority 3" },
-    { "title": "Complete averages and weighted averages", "detail": "Teach the high-yield rule, wording translation, fastest method, backup method, and common traps.", "priority": "Priority 4" },
-    { "title": "Move toward number properties", "detail": "After recognition becomes reliable, begin the next high-yield Quant area with mostly medium and medium-hard questions.", "priority": "Priority 5" }
+    { "title": "Daily Translation Drill — 15–20 minutes", "detail": "Ignore numbers first, identify the hidden structure, translate it into a formula or ratio, and only then solve. Build toward recognition in about 10–20 seconds.", "priority": "Priority 1" },
+    { "title": "Mixed-topic Data Sufficiency", "detail": "Test statement (1), then statement (2), and combine only when both are insufficient. For Yes/No questions, definite Yes or definite No is sufficient.", "priority": "Priority 2" },
+    { "title": "Prove insufficiency with two cases", "detail": "Find two valid cases that produce different answers; watch less than, greater than, at least, at most, exactly, and percentage boundaries.", "priority": "Priority 3" },
+    { "title": "Weighted-average DS transfer", "detail": "Vary the unknown and practice recognizing when multiple groups contribute to one overall average.", "priority": "Priority 4" },
+    { "title": "Work-rate and proportionality DS", "detail": "Translate wording first, write the rate or k-equation, and ask whether the statement determines the required constant or relationship.", "priority": "Priority 5" },
+    { "title": "Untitled authentic GMAT prompts", "detail": "Use medium and medium-hard problems with plausible distractors; do not name the topic before solving.", "priority": "Maintain" }
   ],
   "studySessions": [
     {
@@ -69,6 +81,11 @@
     }
   ],
   "recentActivity": [
+    { "block": "Oct 27 · Data Sufficiency process", "evidence": "Practiced statement (1), statement (2), then combination only when both alone are insufficient" },
+    { "block": "Oct 27 · Yes/No sufficiency", "evidence": "Understood that a forced Yes or a forced No is sufficient" },
+    { "block": "Oct 27 · Proving insufficiency", "evidence": "Used two valid cases with different answers; reviewed boundary wording and percentage traps" },
+    { "block": "Oct 27 · Mixed DS structures", "evidence": "Practiced fixed ratios, weighted averages, work rates, and proportionality inside DS" },
+    { "block": "Oct 27 · Recognition diagnosis", "evidence": "Framework understood; transfer remains beginner/intermediate because dense wording hides the mathematical structure" },
     { "block": "Oct 26 · Multi-step algebra + ratios + totals", "evidence": "Solved the dealership structure and a similar Orion/Vega problem; x-method improving, 2×2 matrix learned as an optional organizer" },
     { "block": "Oct 26 · Work-rate inverse relationship", "evidence": "Learned time ratio 3:4 → reciprocal rate ratio 4:3; solved the machine example with both shortcut and full algebra methods" },
     { "block": "Oct 26 · Rate × quantity = total", "evidence": "Understood 0.70 × 1.20 = 0.84 and its links to revenue, distance, work, production and payroll" },
