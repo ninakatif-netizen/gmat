@@ -6,7 +6,9 @@ Published site: https://ninakatif-netizen.github.io/gmat/
 
 For routine ChatGPT/Codex revisions, edit only [`dist/progress.json`](dist/progress.json). It contains the target score, percentages, topic mastery, recommendations, study history, and recent evidence used by the dashboard.
 
-Keep `dist/index.html` unchanged unless the user explicitly requests a design or behavior change. Do not reintroduce missions, a timer, review checkboxes, or browser-only progress storage.
+Keep `dist/index.html` unchanged unless the user explicitly requests a design or behavior change. Do not reintroduce missions or review checkboxes, and do not store mastery/progress data only in the browser.
+
+The optional active-study timer is implemented separately in [`dist/timer.js`](dist/timer.js). It stores only timer state and completed timer sessions in the browser under `gmat655-study-timer-v1`; it must never modify mastery, readiness, or mountain progress in `progress.json`.
 
 After updating the JSON:
 
