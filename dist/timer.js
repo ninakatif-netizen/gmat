@@ -71,8 +71,14 @@
     return records;
   }
 
+  function syncProgressSessions(data){
+    let changed=false;
+    data.studySessions.forEach((session,index)=>{if(!categories.includes(session.timerCategory))return;const id=`progress-${session.date}-${index}`;if(timerData.sessions.some(saved=>saved.id===id))return;timerData.sessions.push({id,date:session.date,category:session.timerCategory,activeDurationMs:session.minutes*60000,source:'progress',label:session.breakdown});changed=true});
+    if(changed){timerData.sessions.sort((a,b)=>String(b.date).localeCompare(String(a.date)));timerData.sessions=timerData.sessions.slice(0,MAX_SESSIONS);saveState()}
+  }
+
   function renderMetrics(now){
-    const records=recordsWithActive(now),todayKey=localKey(new Date(now)),weekStart=new Date(now);weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-((weekStart.getDay()+6)%7));const weekKey=localKey(weekStart);
+    const records=recordsWithActive(now),todayKey=localKey(new Date(now)),weekStart=new Date(now);weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-weekStart.getDay());const weekKey=localKey(weekStart);
     const total=predicate=>records.filter(predicate).reduce((sum,session)=>sum+session.activeDurationMs,0);
     elements.today.textContent=formatDuration(total(session=>session.date===todayKey));elements.week.textContent=formatDuration(total(session=>session.date>=weekKey&&session.date<=todayKey));elements.quant.textContent=formatDuration(total(session=>session.category==='Quant'));elements.verbal.textContent=formatDuration(total(session=>session.category==='Verbal'));elements.di.textContent=formatDuration(total(session=>session.category==='Data Insights'));
   }
@@ -81,17 +87,17 @@
     if(!progressData)return;
     const totalsByDate={},studyDays=new Set(progressData.studyDays||[]);
     progressData.studySessions.forEach(session=>{totalsByDate[session.date]=(totalsByDate[session.date]||0)+session.minutes*60000;studyDays.add(session.date)});
-    recordsWithActive(now).forEach(session=>{totalsByDate[session.date]=(totalsByDate[session.date]||0)+session.activeDurationMs;if(session.activeDurationMs>0)studyDays.add(session.date)});
-    const today=new Date(now),todayKey=localKey(today),weekStart=new Date(today);weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-((weekStart.getDay()+6)%7));const weekKey=localKey(weekStart),weekly=Object.entries(totalsByDate).filter(([date])=>date>=weekKey&&date<=todayKey).reduce((sum,[,milliseconds])=>sum+milliseconds,0),target=progressData.weeklyTargetMinutes*60000,weeklyPercent=Math.max(0,Math.min(100,Math.round(weekly/target*100))),formatProgress=milliseconds=>{const minutes=Math.floor(milliseconds/60000);return minutes>=60?`${Math.floor(minutes/60)}h ${String(minutes%60).padStart(2,'0')}m`:`${minutes}m`};
+    recordsWithActive(now).filter(session=>session.source!=='progress').forEach(session=>{totalsByDate[session.date]=(totalsByDate[session.date]||0)+session.activeDurationMs;if(session.activeDurationMs>0)studyDays.add(session.date)});
+    const today=new Date(now),todayKey=localKey(today),weekStart=new Date(today);weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-weekStart.getDay());const weekKey=localKey(weekStart),weekly=Object.entries(totalsByDate).filter(([date])=>date>=weekKey&&date<=todayKey).reduce((sum,[,milliseconds])=>sum+milliseconds,0),target=progressData.weeklyTargetMinutes*60000,weeklyPercent=Math.max(0,Math.min(100,Math.round(weekly/target*100))),formatProgress=milliseconds=>{const minutes=Math.floor(milliseconds/60000);return minutes>=60?`${Math.floor(minutes/60)}h ${String(minutes%60).padStart(2,'0')}m`:`${minutes}m`};
     let streak=0,cursor=new Date(today);for(let i=0;i<365;i++){const key=localKey(cursor);if(studyDays.has(key)){streak++;cursor.setDate(cursor.getDate()-1)}else if(i===0){cursor.setDate(cursor.getDate()-1)}else break}
-    const start=new Date(weekStart);let days='';for(let i=0;i<7;i++){const day=new Date(start);day.setDate(start.getDate()+i);const key=localKey(day),milliseconds=totalsByDate[key]||0,studied=studyDays.has(key);days+=`<div class="day ${studied?'studied':''} ${key===todayKey?'today':''}"><i title="${escapeHtml(milliseconds?formatProgress(milliseconds):studied?'Study recorded; duration not tracked':'No study recorded')}"></i><small>${['M','T','W','T','F','S','S'][i]}</small></div>`}
+    const start=new Date(weekStart);let days='';for(let i=0;i<7;i++){const day=new Date(start);day.setDate(start.getDate()+i);const key=localKey(day),milliseconds=totalsByDate[key]||0,studied=studyDays.has(key);days+=`<div class="day ${studied?'studied':''} ${key===todayKey?'today':''}"><i title="${escapeHtml(milliseconds?formatProgress(milliseconds):studied?'Study recorded; duration not tracked':'No study recorded')}"></i><small>${['S','M','T','W','T','F','S'][i]}</small></div>`}
     const allTime=Object.values(totalsByDate).reduce((sum,milliseconds)=>sum+milliseconds,0);$('#week-target').textContent=`This week · ${formatProgress(target)} target`;$('#week-total').textContent=`${formatProgress(weekly)} / ${formatProgress(target)}`;$('#week-percent').textContent=`${weeklyPercent}%`;$('#week-bar').style.width=`${weeklyPercent}%`;$('#week-grid').innerHTML=days;$('#streak').textContent=`${streak}-day streak`;$('#active-study').textContent=formatProgress(allTime);
   }
 
   function renderHistory(){
     const recent=timerData.sessions.slice(0,5);
     if(!recent.length){elements.list.className='empty-sessions';elements.list.textContent='No timer sessions yet.';return}
-    elements.list.className='';elements.list.innerHTML=recent.map(session=>`<div class="session-row" title="${escapeHtml(new Date(session.startTime).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}))}–${escapeHtml(new Date(session.endTime).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}))}"><span>${escapeHtml(formatDate(session.date))}</span><span>${escapeHtml(session.category)}</span><span>${escapeHtml(formatDuration(session.activeDurationMs))}</span></div>`).join('');
+    elements.list.className='';elements.list.innerHTML=recent.map(session=>{const title=session.startTime&&session.endTime?`${new Date(session.startTime).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}–${new Date(session.endTime).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}`:'Imported from progress history';return `<div class="session-row" title="${escapeHtml(title)}"><span>${escapeHtml(formatDate(session.date))}</span><span>${escapeHtml(session.category)}</span><span>${escapeHtml(formatDuration(session.activeDurationMs))}</span></div>`}).join('');
   }
 
   function render(){
@@ -101,6 +107,6 @@
     renderMetrics(now);renderHistory();renderMainStudyTotals(now);
   }
 
-  elements.start.addEventListener('click',startSession);elements.pause.addEventListener('click',pauseSession);elements.resume.addEventListener('click',resumeSession);elements.finish.addEventListener('click',finishSession);elements.confirm.addEventListener('click',confirmContinuedStudy);elements.confirmPause.addEventListener('click',pauseSession);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});window.addEventListener('gmat:progress-loaded',event=>{progressData=event.detail;render()});
+  elements.start.addEventListener('click',startSession);elements.pause.addEventListener('click',pauseSession);elements.resume.addEventListener('click',resumeSession);elements.finish.addEventListener('click',finishSession);elements.confirm.addEventListener('click',confirmContinuedStudy);elements.confirmPause.addEventListener('click',pauseSession);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});window.addEventListener('gmat:progress-loaded',event=>{progressData=event.detail;syncProgressSessions(progressData);render()});
   render();setInterval(render,1000);
 })();
