@@ -4,15 +4,16 @@
   "targetScore": "655+",
   "deadline": "2026-12-20T23:59:59",
   "overallProgress": 15,
-  "quantFoundationProgress": 33,
-  "activeTopicCount": 7,
+  "quantFoundationProgress": 35,
+  "activeTopicCount": 9,
   "weeklyTargetMinutes": 1680,
+  "studyDays": ["2026-10-25", "2026-10-26"],
   "hero": {
     "camp": "Camp 1 · Foundations",
-    "summary": "Keep strengthening pattern recognition through high-yield mixed application. ChatGPT will guide the next study steps as your evidence changes."
+    "summary": "Use authentic medium and medium-hard GMAT wording. For each new pattern, learn the rule, wording translation, fastest method, safe backup, and common trap—then recycle it later without naming the topic."
   },
   "route": {
-    "next": "mixed recognition",
+    "next": "weighted-average transfer",
     "stages": [
       { "name": "Camp 1", "description": "Foundations · now" },
       { "name": "Camp 2", "description": "Mixed application" },
@@ -22,7 +23,7 @@
     ]
   },
   "coverage": [
-    { "name": "Quant 80/20", "percent": 33 },
+    { "name": "Quant 80/20", "percent": 35 },
     { "name": "Verbal", "percent": 0 },
     { "name": "Data Insights", "percent": 0 }
   ],
@@ -34,30 +35,30 @@
   ],
   "topics": [
     { "name": "Percentages", "status": "mastered enough for now · reverse, successive changes, multipliers, mental shortcuts and applied business questions", "tone": "mastered" },
-    { "name": "Ratios & proportions", "status": "strong · mostly mastered · totals, differences, shared terms, changing ratios and constant-side matching", "tone": "mastered" },
+    { "name": "Ratios & proportions", "status": "strong foundation · increasingly applied inside multi-step algebra, totals and subgroup problems", "tone": "mastered" },
     { "name": "Fractions", "status": "foundation mastered · operations, simplifying and applied word-problem practice ongoing", "tone": "mastered" },
-    { "name": "Word-problem recognition", "status": "in progress · identify the hidden mathematical tool before calculating", "tone": "developing" },
-    { "name": "Algebra", "status": "started · translate words to equations; medium/hard application next", "tone": "started" },
+    { "name": "Multi-step word problems", "status": "improving · high priority · use x → solve first group → ratio → second-group total → leftover; use a 2×2 matrix when wording is crowded", "tone": "developing" },
+    { "name": "Algebra", "status": "in progress · translating authentic wording into equations and combining algebra with ratios and totals", "tone": "developing" },
     { "name": "Rates / distance", "status": "started · D = R × T, head starts and combined meeting speed", "tone": "started" },
-    { "name": "Work-rate problems", "status": "currently learning · LCM work units, units/hour, completed and remaining work", "tone": "developing" },
-    { "name": "Averages / weighted averages", "status": "not started", "tone": "not-started" },
+    { "name": "Work-rate problems", "status": "stronger · inverse time/rate wording newly learned and needs recycling · if time M:N = 3:4, rate M:N = 4:3", "tone": "developing" },
+    { "name": "Rate × quantity = total", "status": "introduced and understood · connect workers × output, units × price, distance, work, production and payroll; needs disguised application", "tone": "started" },
+    { "name": "Weighted averages", "status": "in progress · formula setup is good; transfer across different unknowns and disguised wording needs practice", "tone": "developing" },
     { "name": "Number properties", "status": "not started", "tone": "not-started" },
-    { "name": "Exponents / roots / inequalities", "status": "not started", "tone": "not-started" },
-    { "name": "Statistics", "status": "not started", "tone": "not-started" },
-    { "name": "Probability", "status": "not started", "tone": "not-started" },
+    { "name": "Exponents / roots", "status": "not systematically covered", "tone": "not-started" },
+    { "name": "Inequalities", "status": "not systematically covered", "tone": "not-started" },
+    { "name": "Statistics / probability", "status": "not systematically covered", "tone": "not-started" },
     { "name": "Sets / combinations / sequences / mixtures", "status": "not started", "tone": "not-started" },
     { "name": "Data Insights", "status": "not started", "tone": "not-started" },
     { "name": "Verbal", "status": "not started", "tone": "not-started" },
-    { "name": "Timed Quant sets", "status": "not started", "tone": "not-started" },
+    { "name": "Timed mixed Quant sets", "status": "not started", "tone": "not-started" },
     { "name": "Full mock exams", "status": "not started", "tone": "not-started" }
   ],
   "recommendations": [
-    { "title": "Mixed word-problem recognition", "detail": "Identify the hidden mathematical tool before calculating", "priority": "Priority 1" },
-    { "title": "Work-rate problems", "detail": "Use LCM work units, add rates, then track completed and remaining work", "priority": "Priority 2" },
-    { "title": "Applied algebra", "detail": "Practice medium/hard GMAT translation rather than easy drills", "priority": "Next" },
-    { "title": "Rates / distance", "detail": "Recycle D = R × T, head starts, and combined meeting speed", "priority": "Mix in" },
-    { "title": "Mastered foundations", "detail": "Recycle percentages, ratios, and fractions inside mixed questions", "priority": "Maintain" },
-    { "title": "Averages & weighted averages", "detail": "Teach the high-yield rule and shortcut before practice", "priority": "Up next" }
+    { "title": "Weighted-average transfer", "detail": "Vary the unknown: subgroup size, subgroup average, overall average, group-size ratio, and before/after group changes. Do not repeat identical templates.", "priority": "Priority 1" },
+    { "title": "Inverse time/rate recognition", "detail": "Recycle the reciprocal ratio shortcut inside disguised work-rate problems; keep the full fractional equation as a backup.", "priority": "Priority 2" },
+    { "title": "Multi-step algebra + ratio + totals", "detail": "Use authentic business scenarios and the x → first group → ratio → second-group total → leftover sequence.", "priority": "Priority 3" },
+    { "title": "Complete averages and weighted averages", "detail": "Teach the high-yield rule, wording translation, fastest method, backup method, and common traps.", "priority": "Priority 4" },
+    { "title": "Move toward number properties", "detail": "After recognition becomes reliable, begin the next high-yield Quant area with mostly medium and medium-hard questions.", "priority": "Priority 5" }
   ],
   "studySessions": [
     {
@@ -67,10 +68,10 @@
     }
   ],
   "recentActivity": [
-    { "block": "Percentages · core and applied methods", "evidence": "Mastered for now" },
-    { "block": "Ratios · basic through changing ratios", "evidence": "Strong" },
-    { "block": "Fractions · operations and word problems", "evidence": "Foundation mastered" },
-    { "block": "Rates / distance · head-start meeting problem", "evidence": "Solved correctly" },
-    { "block": "Work rates · LCM work-unit method", "evidence": "Currently learning" }
+    { "block": "Oct 26 · Multi-step algebra + ratios + totals", "evidence": "Solved the dealership structure and a similar Orion/Vega problem; x-method improving, 2×2 matrix learned as an optional organizer" },
+    { "block": "Oct 26 · Work-rate inverse relationship", "evidence": "Learned time ratio 3:4 → reciprocal rate ratio 4:3; solved the machine example with both shortcut and full algebra methods" },
+    { "block": "Oct 26 · Rate × quantity = total", "evidence": "Understood 0.70 × 1.20 = 0.84 and its links to revenue, distance, work, production and payroll" },
+    { "block": "Oct 26 · Weighted averages", "evidence": "Independently formed (10 + x)(20) = 10(28) + 16x; setup is good, transfer still needs practice" },
+    { "block": "Oct 26 · GMAT wording", "evidence": "Used all 8 free GMAT Club questions; continue with authentic medium and medium-hard custom questions" }
   ]
 }
