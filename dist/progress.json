@@ -1,29 +1,29 @@
 {
-  "lastUpdated": "2026-10-27",
+  "lastUpdated": "2026-10-29",
   "student": "Najlae",
   "targetScore": "655+",
   "deadline": "2026-12-20T23:59:59",
   "overallProgress": 15,
-  "quantFoundationProgress": 36,
-  "activeTopicCount": 10,
+  "quantFoundationProgress": 40,
+  "activeTopicCount": 13,
   "weeklyTargetMinutes": 1680,
-  "studyDays": ["2026-10-25", "2026-10-26", "2026-10-27"],
+  "studyDays": ["2026-10-25", "2026-10-26", "2026-10-27", "2026-10-29"],
   "hero": {
     "camp": "Camp 1 · Foundations",
-    "summary": "Main bottleneck: translating dense GMAT wording into the correct formula, ratio, or relationship. Recognition—not basic arithmetic—is the current priority."
+    "summary": "Arithmetic coverage has expanded, but recognition and independent recall are still developing. The priority is translating disguised GMAT wording into the correct number-property structure."
   },
   "bottleneck": {
-    "title": "Main bottleneck: translating words into math",
-    "summary": "The formula is often known once the topic is recognized, but dense wording can hide the structure. Separate recognition from calculation and translate before solving.",
+    "title": "Recognition / recall still developing",
+    "summary": "Many rules make sense immediately after review, but independent retrieval becomes harder when the wording changes. This is different from not understanding the concept: train recognition, recall, and constraint interpretation before calculation.",
     "drill": [
-      "Read one GMAT sentence and ignore the numbers initially.",
-      "Identify the hidden structure and translate it into a formula or ratio.",
-      "Progress from formula-only to formula-and-solve, then untitled problems.",
-      "Build toward timed recognition in about 10–20 seconds."
+      "Before solving, ask: What mathematical structure is this wording secretly describing?",
+      "Translate equal groups → factors/GCF; first time together → LCM; left over → remainder; integer dimensions → factor pairs.",
+      "Retrieve the rule without notes, then move immediately to a disguised GMAT-style application.",
+      "Classify misses as recall, constraint, formula recognition, calculation, sign, endpoint, remainder setup, or divisibility reasoning."
     ]
   },
   "route": {
-    "next": "daily translation drill",
+    "next": "finish exponent and root rules",
     "stages": [
       { "name": "Camp 1", "description": "Foundations · now" },
       { "name": "Camp 2", "description": "Mixed application" },
@@ -33,7 +33,7 @@
     ]
   },
   "coverage": [
-    { "name": "Quant 80/20", "percent": 36 },
+    { "name": "Quant 80/20", "percent": 40 },
     { "name": "Verbal", "percent": 0 },
     { "name": "Data Insights", "percent": 5 }
   ],
@@ -53,9 +53,10 @@
     { "name": "Work-rate problems", "status": "stronger · inverse time/rate wording newly learned and needs recycling · if time M:N = 3:4, rate M:N = 4:3", "tone": "developing" },
     { "name": "Rate × quantity = total", "status": "introduced and understood · connect workers × output, units × price, distance, work, production and payroll; needs disguised application", "tone": "started" },
     { "name": "Weighted averages", "status": "in progress · formula setup is good; transfer across different unknowns and disguised wording needs practice", "tone": "developing" },
-    { "name": "Number properties", "status": "not started", "tone": "not-started" },
-    { "name": "Exponents / roots", "status": "not systematically covered", "tone": "not-started" },
-    { "name": "Inequalities", "status": "not systematically covered", "tone": "not-started" },
+    { "name": "Arithmetic / Number Properties", "status": "about 50% coverage · foundations introduced across prime factorization, factors, GCF/LCM, divisibility, remainders, parity, signs, perfect powers, consecutive integers and units-digit cycles · not test-ready", "tone": "developing" },
+    { "name": "Exponents / roots", "status": "partially covered · same-base multiplication practiced; division, power-of-a-power, zero exponent and roots need retrieval and application", "tone": "started" },
+    { "name": "Absolute value", "status": "basic rule understood · split |expression| = a into +a and −a cases; harder applications needed", "tone": "started" },
+    { "name": "Inequalities", "status": "basic foundations only · strict versus inclusive endpoints understood; manipulation and mixed applications still needed", "tone": "started" },
     { "name": "Statistics / probability", "status": "not systematically covered", "tone": "not-started" },
     { "name": "Sets / combinations / sequences / mixtures", "status": "not started", "tone": "not-started" },
     { "name": "Data Sufficiency", "status": "framework understood · beginner/intermediate transfer · needs mixed-topic practice; recognize what the wording secretly describes", "tone": "developing" },
@@ -65,13 +66,20 @@
     { "name": "Full mock exams", "status": "not started", "tone": "not-started" }
   ],
   "recommendations": [
-    { "title": "Daily Translation Drill — 15–20 minutes", "detail": "Ignore numbers first, identify the hidden structure, translate it into a formula or ratio, and only then solve. Build toward recognition in about 10–20 seconds.", "priority": "Priority 1" },
-    { "title": "Mixed-topic Data Sufficiency", "detail": "Test statement (1), then statement (2), and combine only when both are insufficient. For Yes/No questions, definite Yes or definite No is sufficient.", "priority": "Priority 2" },
-    { "title": "Prove insufficiency with two cases", "detail": "Find two valid cases that produce different answers; watch less than, greater than, at least, at most, exactly, and percentage boundaries.", "priority": "Priority 3" },
-    { "title": "Weighted-average DS transfer", "detail": "Vary the unknown and practice recognizing when multiple groups contribute to one overall average.", "priority": "Priority 4" },
-    { "title": "Work-rate and proportionality DS", "detail": "Translate wording first, write the rate or k-equation, and ask whether the statement determines the required constant or relationship.", "priority": "Priority 5" },
-    { "title": "Untitled authentic GMAT prompts", "detail": "Use medium and medium-hard problems with plausible distractors; do not name the topic before solving.", "priority": "Maintain" }
+    { "title": "Finish exponent and root rules", "detail": "Complete division, power-of-a-power, zero exponents and root/absolute-value links, then apply them without topic labels.", "priority": "Priority 1" },
+    { "title": "Harder divisibility and remainder patterns", "detail": "Translate divisibility constraints and n = dk + r before calculating; include transformed expressions and must-be-true questions.", "priority": "Priority 2" },
+    { "title": "Disguised GCF / LCM applications", "detail": "Practice equal grouping, synchronized cycles and smallest-common-multiple wording rather than obvious one-step drills.", "priority": "Priority 3" },
+    { "title": "Prime factors and perfect powers", "detail": "Combine exponent-count factors with perfect-square and perfect-cube conditions inside GMAT-style questions.", "priority": "Priority 4" },
+    { "title": "Mixed number-properties reasoning", "detail": "Use must-be-true / could-be-true sets covering parity, signs, consecutive integers, units digits and factor pairs.", "priority": "Priority 5" },
+    { "title": "Absolute value and inequalities", "detail": "Move from the basic two-case and endpoint rules into mixed medium questions and Data Sufficiency.", "priority": "Priority 6" },
+    { "title": "Untitled medium-hard arithmetic sets", "detail": "Do not reveal the topic. Ask what structure the wording secretly describes, then solve and classify any error.", "priority": "Priority 7" },
+    { "title": "Timed mixed sets", "detail": "Begin timing only after rule retrieval is reliable; recycle percentages, ratios, rates, weighted averages and proportionality.", "priority": "Next phase" }
   ],
+  "errorTracking": {
+    "primary": "Recognition / Translation Error",
+    "distinction": "Recognition / recall still developing is not the same as concept not understood.",
+    "subtypes": ["Forgot rule", "Misread constraint", "Formula recognition", "Arithmetic / calculation", "Careless sign", "Endpoint mistake", "Remainder setup", "Divisibility reasoning"]
+  },
   "studySessions": [
     {
       "date": "2026-10-25",
@@ -87,6 +95,11 @@
     }
   ],
   "recentActivity": [
+    { "block": "Oct 29 · Arithmetic / Number Properties", "evidence": "Systematically introduced prime factorization, factor counts and factor-pair recognition; conceptual foundation is developing, not yet test-ready" },
+    { "block": "Oct 29 · Divisibility, GCF / LCM and remainders", "evidence": "Learned core triggers, n = dk + r, divisibility shortcuts and transformed-remainder setup; harder applications remain" },
+    { "block": "Oct 29 · Parity, signs and perfect powers", "evidence": "Introduced odd/even and sign logic; practiced even prime exponents for squares, while cubes remain introductory" },
+    { "block": "Oct 29 · Units digits, absolute value and inequalities", "evidence": "Introduced power cycles; understood basic two-case absolute value and strict/inclusive endpoint rules" },
+    { "block": "Oct 29 · Arithmetic strategy", "evidence": "Reinforced that constraint wording is part of Quant skill; factor, cycle, remainder and grouping structures are often disguised" },
     { "block": "Oct 27 · Data Sufficiency process", "evidence": "Practiced statement (1), statement (2), then combination only when both alone are insufficient" },
     { "block": "Oct 27 · Yes/No sufficiency", "evidence": "Understood that a forced Yes or a forced No is sufficient" },
     { "block": "Oct 27 · Proving insufficiency", "evidence": "Used two valid cases with different answers; reviewed boundary wording and percentage traps" },
