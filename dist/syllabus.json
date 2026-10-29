@@ -1,0 +1,302 @@
+{
+  "statusWeights": {"Not studied": 0, "Introduced": 0.2, "Developing": 0.45, "Reliable": 0.75, "Timed-ready": 1},
+  "targetDistribution": {"Quant": 50, "Verbal": 25, "Data Insights": 20, "Mock / Review": 5},
+  "domains": [
+    {
+      "id": "quant",
+      "name": "Quantitative Reasoning",
+      "readiness": "Foundations developing · not timed-ready",
+      "categories": [
+        {
+          "name": "A. Arithmetic / Number Properties",
+          "topics": [
+            {"name":"Integers","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Basic integer patterns introduced","timed":false},
+            {"name":"Positive and negative numbers","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Product sign rules introduced","timed":false},
+            {"name":"Odd and even numbers","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"A product is odd only when every factor is odd","timed":false},
+            {"name":"Factors","status":"Developing","priority":1,"lastStudied":"2026-10-29","notes":"Factor counts and factor-pair recognition need transfer","timed":false},
+            {"name":"Multiples","status":"Introduced","priority":1,"lastStudied":"2026-10-29","notes":"Connected to divisibility and LCM","timed":false},
+            {"name":"Prime numbers","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Foundation only","timed":false},
+            {"name":"Prime factorization","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Understands product-of-primes form","timed":false},
+            {"name":"Divisibility","status":"Developing","priority":1,"lastStudied":"2026-10-29","notes":"Shortcuts introduced; harder applications needed","timed":false},
+            {"name":"GCF","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Trigger: greatest equal groups with no leftovers","timed":false},
+            {"name":"LCM","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Trigger: first time repeating cycles meet","timed":false},
+            {"name":"Remainders","status":"Developing","priority":1,"lastStudied":"2026-10-29","notes":"Basic n = dk + r understood; harder transformations needed","timed":false},
+            {"name":"Units digits / cyclicity","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"New; cycles need memorization and practice","timed":false},
+            {"name":"Consecutive integers","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Basic patterns understood","timed":false},
+            {"name":"Fractions","status":"Developing","priority":1,"lastStudied":"2026-10-25","notes":"Foundation solid; applied practice ongoing","timed":false},
+            {"name":"Decimals","status":"Not studied","priority":2},
+            {"name":"Percentages","status":"Developing","priority":1,"lastStudied":"2026-10-25","notes":"Foundation solid; disguised transfer developing","timed":false},
+            {"name":"Ratios","status":"Developing","priority":1,"lastStudied":"2026-10-26","notes":"Strong foundation; recycle in mixed questions","timed":false},
+            {"name":"Proportions","status":"Developing","priority":1,"lastStudied":"2026-10-27","notes":"Direct, inverse and chain structures introduced","timed":false},
+            {"name":"Direct proportionality","status":"Developing","priority":1,"lastStudied":"2026-10-27","notes":"Write y = kx immediately","timed":false},
+            {"name":"Inverse proportionality","status":"Developing","priority":1,"lastStudied":"2026-10-27","notes":"Inverse relationship understood; mixed transfer needed","timed":false},
+            {"name":"Exponents","status":"Developing","priority":1,"lastStudied":"2026-10-29","notes":"Multiplication rule practiced; remaining rules need retrieval","timed":false},
+            {"name":"Roots","status":"Introduced","priority":1,"lastStudied":"2026-10-29","notes":"Finish root rules and links to absolute value","timed":false},
+            {"name":"Perfect squares","status":"Developing","priority":2,"lastStudied":"2026-10-29","notes":"Even prime-exponent rule practiced","timed":false},
+            {"name":"Perfect cubes","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Prime exponents must be multiples of three","timed":false},
+            {"name":"Absolute value","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Basic two-case rule understood","timed":false},
+            {"name":"Number line / ordering","status":"Not studied","priority":2},
+            {"name":"Estimation","status":"Not studied","priority":3},
+            {"name":"Approximation","status":"Not studied","priority":3},
+            {"name":"Must / could / cannot be true number-property reasoning","status":"Not studied","priority":1,"notes":"Immediate roadmap priority"}
+          ]
+        },
+        {
+          "name": "B. Algebra",
+          "topics": [
+            {"name":"Algebraic expressions","status":"Introduced","priority":2,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Simplifying expressions","status":"Introduced","priority":2,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Linear equations","status":"Developing","priority":1,"lastStudied":"2026-10-26","notes":"Move to medium/hard GMAT wording","timed":false},
+            {"name":"Equations with fractions","status":"Not studied","priority":2},
+            {"name":"Simultaneous equations","status":"Not studied","priority":1},
+            {"name":"Substitution","status":"Introduced","priority":2,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Elimination","status":"Not studied","priority":2},
+            {"name":"Inequalities","status":"Introduced","priority":1,"lastStudied":"2026-10-29","notes":"Basic endpoint rules only","timed":false},
+            {"name":"Compound inequalities","status":"Introduced","priority":1,"lastStudied":"2026-10-29","notes":"Basic strict range interpreted","timed":false},
+            {"name":"Translating words into equations","status":"Developing","priority":1,"lastStudied":"2026-10-27","notes":"Main recognition bottleneck","timed":false},
+            {"name":"Translating relationships into variables","status":"Developing","priority":1,"lastStudied":"2026-10-27","notes":"Recognition and independent recall still developing","timed":false},
+            {"name":"Formulas","status":"Introduced","priority":2,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Direct variation","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Inverse variation","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Chained proportionality","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Simultaneous proportionality","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Algebraic word problems","status":"Developing","priority":2,"lastStudied":"2026-10-27","notes":"Dense wording hides the structure","timed":false},
+            {"name":"Must / could / cannot be true algebra questions","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "C. Rates and Applied Quant",
+          "topics": [
+            {"name":"Distance = Rate × Time","status":"Developing","priority":1,"lastStudied":"2026-10-25","notes":"D = R × T known","timed":false},
+            {"name":"Average speed","status":"Introduced","priority":1,"lastStudied":"2026-10-25","timed":false},
+            {"name":"Relative speed","status":"Developing","priority":1,"lastStudied":"2026-10-25","timed":false},
+            {"name":"Catch-up problems","status":"Introduced","priority":1,"lastStudied":"2026-10-25","timed":false},
+            {"name":"Opposite-direction travel","status":"Introduced","priority":1,"lastStudied":"2026-10-25","timed":false},
+            {"name":"Same-direction travel","status":"Introduced","priority":1,"lastStudied":"2026-10-25","timed":false},
+            {"name":"Work rates","status":"Developing","priority":1,"lastStudied":"2026-10-26","notes":"LCM-units shortcut learned","timed":false},
+            {"name":"Combined work","status":"Developing","priority":1,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Machine rates","status":"Developing","priority":1,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Filling / draining","status":"Not studied","priority":2},
+            {"name":"Quantity × rate = total","status":"Developing","priority":1,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Revenue = units × price","status":"Introduced","priority":2,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Production = workers × productivity","status":"Introduced","priority":2,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Unit-rate reasoning","status":"Introduced","priority":2,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Mixture-style reasoning","status":"Not studied","priority":2},
+            {"name":"Multi-stage rate problems","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "D. Statistics",
+          "topics": [
+            {"name":"Mean","status":"Introduced","priority":1,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Median","status":"Not studied","priority":2},
+            {"name":"Mode","status":"Not studied","priority":3},
+            {"name":"Range","status":"Not studied","priority":1},
+            {"name":"Weighted averages","status":"Developing","priority":1,"lastStudied":"2026-10-27","notes":"Formula setup good; transfer needed","timed":false},
+            {"name":"Combined averages","status":"Introduced","priority":1,"lastStudied":"2026-10-26","timed":false},
+            {"name":"Effect of adding / removing values","status":"Not studied","priority":2},
+            {"name":"Standard deviation concept","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Concept exposure only","timed":false},
+            {"name":"Spread / variability","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Comparing distributions","status":"Not studied","priority":2},
+            {"name":"Interpreting summary statistics","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "E. Counting / Combinatorics",
+          "topics": [
+            {"name":"Fundamental counting principle","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Early exposure only","timed":false},
+            {"name":"Factorials","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Permutations","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Arrange / order / rank","timed":false},
+            {"name":"Combinations","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Choose a group; do not mark mastered","timed":false},
+            {"name":"Choosing groups","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Arrangements","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Restricted arrangements","status":"Not studied","priority":2},
+            {"name":"Selecting multiple groups","status":"Not studied","priority":2},
+            {"name":"Sequential selections","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Multiply stages","timed":false},
+            {"name":"Avoiding double-counting","status":"Not studied","priority":2},
+            {"name":"Repeated objects","status":"Not studied","priority":3},
+            {"name":"Order matters vs order does not matter","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false}
+          ]
+        },
+        {
+          "name": "F. Probability",
+          "topics": [
+            {"name":"Basic probability","status":"Not studied","priority":2},
+            {"name":"Favorable / total outcomes","status":"Not studied","priority":2},
+            {"name":"Complementary probability","status":"Not studied","priority":2},
+            {"name":"Independent events","status":"Not studied","priority":2},
+            {"name":"Dependent events","status":"Not studied","priority":2},
+            {"name":"Probability of multiple events","status":"Not studied","priority":2},
+            {"name":"At least one","status":"Not studied","priority":2},
+            {"name":"Probability with combinations","status":"Not studied","priority":2},
+            {"name":"Conditional-style probability reasoning","status":"Not studied","priority":3}
+          ]
+        },
+        {
+          "name": "G. Sets",
+          "topics": [
+            {"name":"Two-set problems","status":"Not studied","priority":2},
+            {"name":"Three-set problems","status":"Not studied","priority":2},
+            {"name":"Union","status":"Not studied","priority":2},
+            {"name":"Intersection","status":"Not studied","priority":2},
+            {"name":"Neither","status":"Not studied","priority":2},
+            {"name":"At least one (sets)","status":"Not studied","priority":2},
+            {"name":"Exactly one","status":"Not studied","priority":2},
+            {"name":"Overlapping groups","status":"Not studied","priority":2},
+            {"name":"Venn-diagram reasoning","status":"Not studied","priority":2},
+            {"name":"Inclusion-exclusion","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "H. Sequences / Series",
+          "topics": [
+            {"name":"Arithmetic sequences","status":"Not studied","priority":2},
+            {"name":"Geometric sequences","status":"Not studied","priority":2},
+            {"name":"Recursive patterns","status":"Not studied","priority":3},
+            {"name":"Finding the nth term","status":"Not studied","priority":2},
+            {"name":"Sequence sums","status":"Not studied","priority":3},
+            {"name":"Pattern recognition","status":"Not studied","priority":2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verbal",
+      "name": "Verbal Reasoning",
+      "readiness": "Very early / beginner",
+      "categories": [
+        {
+          "name": "A. Critical Reasoning",
+          "topics": [
+            {"name":"Identify conclusion","status":"Introduced","priority":1,"lastStudied":"2026-10-29","notes":"Early exposure only","timed":false},
+            {"name":"Identify evidence","status":"Introduced","priority":1,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Assumption","status":"Introduced","priority":1,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Strengthen","status":"Introduced","priority":1,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Weaken","status":"Introduced","priority":1,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Evaluate","status":"Not studied","priority":1},
+            {"name":"Inference (CR)","status":"Not studied","priority":1},
+            {"name":"Resolve paradox / discrepancy","status":"Not studied","priority":2},
+            {"name":"Flaw","status":"Not studied","priority":2},
+            {"name":"Plan / proposal questions","status":"Not studied","priority":2},
+            {"name":"Causal reasoning","status":"Not studied","priority":2},
+            {"name":"Alternative causes","status":"Not studied","priority":2},
+            {"name":"Necessary assumptions","status":"Not studied","priority":1},
+            {"name":"Logical gaps","status":"Not studied","priority":2},
+            {"name":"Scope shifts","status":"Not studied","priority":2},
+            {"name":"Quantitative CR reasoning","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "B. Reading Comprehension",
+          "topics": [
+            {"name":"Main idea","status":"Not studied","priority":1},
+            {"name":"Primary purpose","status":"Not studied","priority":1},
+            {"name":"Supporting detail","status":"Not studied","priority":1},
+            {"name":"Inference (RC)","status":"Not studied","priority":1},
+            {"name":"Application","status":"Not studied","priority":2},
+            {"name":"Logical structure","status":"Not studied","priority":1},
+            {"name":"Passage organization","status":"Not studied","priority":1},
+            {"name":"Author attitude / tone","status":"Not studied","priority":2},
+            {"name":"Function of a paragraph","status":"Not studied","priority":2},
+            {"name":"Function of a sentence","status":"Not studied","priority":2},
+            {"name":"Comparing viewpoints","status":"Not studied","priority":2},
+            {"name":"Science passages","status":"Not studied","priority":2},
+            {"name":"Business / economics passages","status":"Not studied","priority":2},
+            {"name":"Social-science passages","status":"Not studied","priority":2},
+            {"name":"Dense abstract passages","status":"Not studied","priority":2},
+            {"name":"Passage mapping","status":"Not studied","priority":1},
+            {"name":"Efficient note-taking","status":"Not studied","priority":2},
+            {"name":"RC time management","status":"Not studied","priority":2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "di",
+      "name": "Data Insights",
+      "readiness": "Data Sufficiency developing · other formats not studied",
+      "categories": [
+        {
+          "name": "A. Data Sufficiency",
+          "topics": [
+            {"name":"Sufficiency framework","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Statement 1 alone","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Statement 2 alone","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Combine only if needed","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Yes / no sufficiency","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Definite yes / definite no","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Multiple possible values","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Boundary conditions","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Strict inequalities in DS","status":"Introduced","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Ratios in DS","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Percentages in DS","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Rates in DS","status":"Introduced","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Algebra in DS","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Statistics in DS","status":"Introduced","priority":1,"lastStudied":"2026-10-27","timed":false},
+            {"name":"Number properties in DS","status":"Introduced","priority":1,"lastStudied":"2026-10-29","timed":false},
+            {"name":"Proportionality in DS","status":"Developing","priority":1,"lastStudied":"2026-10-27","timed":false}
+          ]
+        },
+        {
+          "name": "B. Multi-Source Reasoning",
+          "topics": [
+            {"name":"Compare tabs / sources","status":"Not studied","priority":2},
+            {"name":"Contradictions","status":"Not studied","priority":2},
+            {"name":"Inference across sources","status":"Not studied","priority":2},
+            {"name":"Combining numerical and textual evidence","status":"Not studied","priority":2},
+            {"name":"Source-specific conclusions","status":"Not studied","priority":2},
+            {"name":"Tracking assumptions","status":"Not studied","priority":2},
+            {"name":"MSR time management","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "C. Table Analysis",
+          "topics": [
+            {"name":"Sorting","status":"Not studied","priority":2},
+            {"name":"Filtering","status":"Not studied","priority":2},
+            {"name":"Percentages in tables","status":"Not studied","priority":2},
+            {"name":"Ratios in tables","status":"Not studied","priority":2},
+            {"name":"Table totals","status":"Not studied","priority":2},
+            {"name":"Weighted averages in tables","status":"Not studied","priority":2},
+            {"name":"Extremes","status":"Not studied","priority":2},
+            {"name":"Conditional statements in tables","status":"Not studied","priority":2},
+            {"name":"Comparing rows","status":"Not studied","priority":2},
+            {"name":"Identifying table patterns","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "D. Graphics Interpretation",
+          "topics": [
+            {"name":"Bar charts","status":"Not studied","priority":2},
+            {"name":"Line charts","status":"Not studied","priority":2},
+            {"name":"Scatterplots","status":"Not studied","priority":2},
+            {"name":"Pie charts","status":"Not studied","priority":2},
+            {"name":"Histograms","status":"Not studied","priority":2},
+            {"name":"Dual-axis charts","status":"Not studied","priority":2},
+            {"name":"Trend interpretation","status":"Not studied","priority":2},
+            {"name":"Interpolation","status":"Not studied","priority":2},
+            {"name":"Percentage change in graphics","status":"Not studied","priority":2},
+            {"name":"Ratios in graphics","status":"Not studied","priority":2},
+            {"name":"Units / scales","status":"Not studied","priority":2},
+            {"name":"Reading chart labels precisely","status":"Not studied","priority":2}
+          ]
+        },
+        {
+          "name": "E. Two-Part Analysis",
+          "topics": [
+            {"name":"Algebraic pair solutions","status":"Not studied","priority":2},
+            {"name":"Logical matching","status":"Not studied","priority":2},
+            {"name":"Rates in Two-Part Analysis","status":"Not studied","priority":2},
+            {"name":"Ratios in Two-Part Analysis","status":"Not studied","priority":2},
+            {"name":"Trade-offs","status":"Not studied","priority":2},
+            {"name":"Tables in Two-Part Analysis","status":"Not studied","priority":2},
+            {"name":"Word problems in Two-Part Analysis","status":"Not studied","priority":2},
+            {"name":"Verbal reasoning in Two-Part Analysis","status":"Not studied","priority":2},
+            {"name":"Quantitative reasoning in Two-Part Analysis","status":"Not studied","priority":2},
+            {"name":"Efficient paired-answer strategy","status":"Not studied","priority":2}
+          ]
+        }
+      ]
+    }
+  ]
+}

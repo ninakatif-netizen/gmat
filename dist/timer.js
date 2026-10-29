@@ -7,7 +7,7 @@
   const categories=['Quant','Verbal','Data Insights','Mock Exam','Review'];
   const $=selector=>document.querySelector(selector);
   const elements={
-    clock:$('#timer-clock'),category:$('#timer-category'),start:$('#timer-start'),pause:$('#timer-pause'),resume:$('#timer-resume'),finish:$('#timer-finish'),state:$('#timer-state'),status:$('#timer-status'),prompt:$('#still-studying'),confirm:$('#timer-confirm'),confirmPause:$('#timer-confirm-pause'),today:$('#timer-today'),week:$('#timer-week'),quant:$('#timer-quant'),verbal:$('#timer-verbal'),di:$('#timer-di'),list:$('#timer-session-list')
+    clock:$('#timer-clock'),category:$('#timer-category'),start:$('#timer-start'),pause:$('#timer-pause'),resume:$('#timer-resume'),finish:$('#timer-finish'),state:$('#timer-state'),status:$('#timer-status'),prompt:$('#still-studying'),confirm:$('#timer-confirm'),confirmPause:$('#timer-confirm-pause'),today:$('#timer-today'),week:$('#timer-week'),quant:$('#timer-quant'),verbal:$('#timer-verbal'),di:$('#timer-di'),list:$('#timer-session-list'),distributionToday:$('#distribution-today'),distributionWeek:$('#distribution-week'),distributionAll:$('#distribution-all'),distributionTodayTotal:$('#distribution-today-total'),distributionWeekTotal:$('#distribution-week-total'),distributionAllTotal:$('#distribution-all-total'),summaryQuantShare:$('#summary-quant-share'),summaryVerbalShare:$('#summary-verbal-share'),summaryDiShare:$('#summary-di-share'),summaryTotal:$('#summary-total-time'),summaryWeek:$('#summary-week-time')
   };
   if(!elements.clock)return;
 
@@ -83,6 +83,22 @@
     elements.today.textContent=formatDuration(total(session=>session.date===todayKey));elements.week.textContent=formatDuration(total(session=>session.date>=weekKey&&session.date<=todayKey));elements.quant.textContent=formatDuration(total(session=>session.category==='Quant'));elements.verbal.textContent=formatDuration(total(session=>session.category==='Verbal'));elements.di.textContent=formatDuration(total(session=>session.category==='Data Insights'));
   }
 
+  function exactPercentages(values){
+    const total=values.reduce((sum,value)=>sum+value,0);if(!total)return values.map(()=>0);
+    const raw=values.map(value=>value/total*100),rounded=raw.map(Math.floor);let remainder=100-rounded.reduce((sum,value)=>sum+value,0);
+    raw.map((value,index)=>({index,fraction:value-Math.floor(value)})).sort((a,b)=>b.fraction-a.fraction||a.index-b.index).slice(0,remainder).forEach(item=>rounded[item.index]++);return rounded;
+  }
+
+  function renderDistribution(now){
+    if(!elements.distributionToday)return;
+    const records=recordsWithActive(now),todayKey=localKey(new Date(now)),weekStart=new Date(now);weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-weekStart.getDay());const weekKey=localKey(weekStart);
+    const scopes=[{records:records.filter(session=>session.date===todayKey),container:elements.distributionToday,total:elements.distributionTodayTotal},{records:records.filter(session=>session.date>=weekKey&&session.date<=todayKey),container:elements.distributionWeek,total:elements.distributionWeekTotal},{records,container:elements.distributionAll,total:elements.distributionAllTotal}];
+    const definitions=[{label:'Quant',matches:category=>category==='Quant'},{label:'Verbal',matches:category=>category==='Verbal'},{label:'Data Insights',matches:category=>category==='Data Insights'},{label:'Mock',matches:category=>category==='Mock'||category==='Mock Exam'},{label:'Review',matches:category=>category==='Review'},{label:'Uncategorized',matches:category=>!categories.includes(category)&&category!=='Mock'}];
+    let allPercentages=[];
+    scopes.forEach((scope,scopeIndex)=>{const values=definitions.map(definition=>scope.records.filter(session=>definition.matches(session.category)).reduce((sum,session)=>sum+session.activeDurationMs,0)),total=values.reduce((sum,value)=>sum+value,0),percentages=exactPercentages(values);if(scopeIndex===2)allPercentages=percentages;scope.total.textContent=`${formatDuration(total)} total`;scope.container.innerHTML=definitions.map((definition,index)=>definition.label==='Uncategorized'&&!values[index]?'':`<div class="distribution-row"><span>${escapeHtml(definition.label)}</span><div class="progress"><span style="width:${percentages[index]}%"></span></div><b>${escapeHtml(formatDuration(values[index]))} · ${percentages[index]}%</b></div>`).join('')});
+    const allRecords=scopes[2].records,allTotal=allRecords.reduce((sum,session)=>sum+session.activeDurationMs,0),weekTotal=scopes[1].records.reduce((sum,session)=>sum+session.activeDurationMs,0);elements.summaryQuantShare.textContent=`${allPercentages[0]||0}%`;elements.summaryVerbalShare.textContent=`${allPercentages[1]||0}%`;elements.summaryDiShare.textContent=`${allPercentages[2]||0}%`;elements.summaryTotal.textContent=formatDuration(allTotal);elements.summaryWeek.textContent=formatDuration(weekTotal);
+  }
+
   function renderMainStudyTotals(now){
     if(!progressData)return;
     const totalsByDate={},studyDays=new Set(progressData.studyDays||[]);
@@ -104,7 +120,7 @@
     const now=Date.now(),session=timerData.activeSession,confirming=needsConfirmation(session,now);
     elements.clock.textContent=formatClock(session?activeDuration(session,now):0);elements.start.disabled=!!session;elements.pause.disabled=!session||session.status!=='running';elements.resume.disabled=!session||session.status!=='paused';elements.finish.disabled=!session;elements.category.disabled=!!session;elements.prompt.hidden=!confirming;
     if(session){elements.category.value=session.category==='Uncategorized'?'':session.category;elements.state.textContent=confirming?'Confirm':session.status==='running'?'Running':'Paused';elements.status.textContent=confirming?'Timer capped at 1h 30m pending confirmation.':session.status==='running'?`${session.category} session in progress.`:`${session.category} session paused; paused time is excluded.`}else{elements.state.textContent='Ready';elements.status.textContent='Choose a category or start without one.'}
-    renderMetrics(now);renderHistory();renderMainStudyTotals(now);
+    renderMetrics(now);renderDistribution(now);renderHistory();renderMainStudyTotals(now);
   }
 
   elements.start.addEventListener('click',startSession);elements.pause.addEventListener('click',pauseSession);elements.resume.addEventListener('click',resumeSession);elements.finish.addEventListener('click',finishSession);elements.confirm.addEventListener('click',confirmContinuedStudy);elements.confirmPause.addEventListener('click',pauseSession);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});window.addEventListener('gmat:progress-loaded',event=>{progressData=event.detail;syncProgressSessions(progressData);render()});
