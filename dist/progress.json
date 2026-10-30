@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-29",
+  "lastUpdated": "2026-10-30",
   "student": "Najlae",
   "targetScore": "655+",
   "deadline": "2026-12-20T23:59:59",
   "overallProgress": 15,
   "quantFoundationProgress": 40,
-  "activeTopicCount": 16,
+  "activeTopicCount": 17,
   "weeklyTargetMinutes": 1680,
-  "studyDays": ["2026-10-25", "2026-10-26", "2026-10-27", "2026-10-29"],
+  "studyDays": ["2026-10-25", "2026-10-26", "2026-10-27", "2026-10-29", "2026-10-30"],
   "hero": {
     "camp": "Camp 1 · Foundations",
     "summary": "Arithmetic coverage has expanded, but recognition and independent recall are still developing. The priority is translating disguised GMAT wording into the correct number-property structure."
@@ -59,7 +59,7 @@
     { "name": "Inequalities", "status": "basic foundations only · strict versus inclusive endpoints understood; manipulation and mixed applications still needed", "tone": "started" },
     { "name": "Statistics", "status": "weighted averages developing · standard-deviation concept newly introduced · broader statistics not studied", "tone": "started" },
     { "name": "Counting / combinatorics", "status": "introduced only · combinations, permutations and order-matters distinction need full practice", "tone": "started" },
-    { "name": "Probability", "status": "not studied", "tone": "not-started" },
+    { "name": "Probability", "status": "basic foundation reviewed · introduced only · no independent accuracy or mastery evidence yet", "tone": "started" },
     { "name": "Sets", "status": "not studied", "tone": "not-started" },
     { "name": "Sequences / series", "status": "not studied", "tone": "not-started" },
     { "name": "Data Sufficiency", "status": "framework understood · beginner/intermediate transfer · needs mixed-topic practice; recognize what the wording secretly describes", "tone": "developing" },
@@ -98,6 +98,7 @@
     }
   ],
   "recentActivity": [
+    { "block": "Oct 30 · Probability basics", "evidence": "Reviewed the basic favorable-outcomes ÷ total-outcomes foundation; logged as introduced, with no duration, accuracy or mastery inferred" },
     { "block": "Oct 29 · Full GMAT roadmap", "evidence": "Added complete Quant, Verbal and Data Insights syllabus visibility with independent status and priority tiers" },
     { "block": "Oct 29 · Counting / combinatorics", "evidence": "Introduced combinations, permutations, staged selections and the order-matters distinction; no mastery evidence yet" },
     { "block": "Oct 29 · Standard deviation and Critical Reasoning", "evidence": "Concept exposure only; standard deviation remains introductory and Critical Reasoning remains very early / beginner" },

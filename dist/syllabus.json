@@ -121,8 +121,8 @@
         {
           "name": "F. Probability",
           "topics": [
-            {"name":"Basic probability","status":"Not studied","priority":2},
-            {"name":"Favorable / total outcomes","status":"Not studied","priority":2},
+            {"name":"Basic probability","status":"Introduced","priority":2,"lastStudied":"2026-10-30","notes":"Basics reviewed; no independent performance evidence yet","timed":false},
+            {"name":"Favorable / total outcomes","status":"Introduced","priority":2,"lastStudied":"2026-10-30","notes":"Basic probability structure reviewed","timed":false},
             {"name":"Complementary probability","status":"Not studied","priority":2},
             {"name":"Independent events","status":"Not studied","priority":2},
             {"name":"Dependent events","status":"Not studied","priority":2},
