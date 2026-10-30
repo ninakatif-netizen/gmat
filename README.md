@@ -12,6 +12,8 @@ Keep `dist/index.html` unchanged unless the user explicitly requests a design or
 
 The optional active-study timer and its Today / Week / All-Time distributions are implemented separately in [`dist/timer.js`](dist/timer.js). It stores only timer state and completed timer sessions in the browser under `gmat655-study-timer-v1`; it must never modify mastery, readiness, syllabus coverage, or mountain progress.
 
+The Daily Boost habit loop lives in [`dist/habit.js`](dist/habit.js) and stores local quest check-offs under `gmat655-habit-v1`. Momentum XP rewards consistency only. It must never modify mastery, readiness, syllabus status, or the mountain.
+
 After updating the JSON:
 
 1. Confirm it is valid JSON.
