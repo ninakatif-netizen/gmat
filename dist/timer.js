@@ -30,7 +30,7 @@
     }catch{return emptyState()}
   }
 
-  let timerData=loadState(),progressData=null;
+  let timerData=loadState(),progressData=null,celebrationUntil=0,celebrationMessage='';
   function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(timerData));return true}catch{return false}}
   function runningIncrement(session,now=Date.now()){return session.status==='running'&&Number.isFinite(session.runStartedAt)?Math.min(Math.max(0,now-session.runStartedAt),UNATTENDED_LIMIT_MS):0}
   function activeDuration(session,now=Date.now()){return Math.max(0,session.activeMs+runningIncrement(session,now))}
@@ -57,7 +57,7 @@
     const session=timerData.activeSession;if(!session)return;
     const now=Date.now(),duration=Math.round(activeDuration(session,now));
     timerData.sessions.unshift({id:session.id,date:session.date,startTime:session.startTime,endTime:new Date(now).toISOString(),activeDurationMs:duration,category:session.category});
-    timerData.sessions=timerData.sessions.slice(0,MAX_SESSIONS);timerData.activeSession=null;saveState();render();
+    timerData.sessions=timerData.sessions.slice(0,MAX_SESSIONS);timerData.activeSession=null;celebrationUntil=now+8000;celebrationMessage=`Session saved — ${formatDuration(duration)} of focused effort. You showed up.`;saveState();render();
   }
 
   function confirmContinuedStudy(){
@@ -119,7 +119,8 @@
   function render(){
     const now=Date.now(),session=timerData.activeSession,confirming=needsConfirmation(session,now);
     elements.clock.textContent=formatClock(session?activeDuration(session,now):0);elements.start.disabled=!!session;elements.pause.disabled=!session||session.status!=='running';elements.resume.disabled=!session||session.status!=='paused';elements.finish.disabled=!session;elements.category.disabled=!!session;elements.prompt.hidden=!confirming;
-    if(session){elements.category.value=session.category==='Uncategorized'?'':session.category;elements.state.textContent=confirming?'Confirm':session.status==='running'?'Running':'Paused';elements.status.textContent=confirming?'Timer capped at 1h 30m pending confirmation.':session.status==='running'?`${session.category} session in progress.`:`${session.category} session paused; paused time is excluded.`}else{elements.state.textContent='Ready';elements.status.textContent='Choose a category or start without one.'}
+    const celebrating=!session&&now<celebrationUntil;elements.status.classList.toggle('celebrate',celebrating);
+    if(session){elements.category.value=session.category==='Uncategorized'?'':session.category;elements.state.textContent=confirming?'Confirm':session.status==='running'?'Running':'Paused';elements.status.textContent=confirming?'Timer capped at 1h 30m pending confirmation.':session.status==='running'?`${session.category} session in progress.`:`${session.category} session paused; paused time is excluded.`}else{elements.state.textContent=celebrating?'Saved ✓':'Ready';elements.status.textContent=celebrating?celebrationMessage:'Choose a category or start without one.'}
     renderMetrics(now);renderDistribution(now);renderHistory();renderMainStudyTotals(now);
   }
 
