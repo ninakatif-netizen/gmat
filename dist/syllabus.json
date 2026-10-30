@@ -107,7 +107,7 @@
             {"name":"Fundamental counting principle","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Early exposure only","timed":false},
             {"name":"Factorials","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
             {"name":"Permutations","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Arrange / order / rank","timed":false},
-            {"name":"Combinations","status":"Introduced","priority":2,"lastStudied":"2026-10-29","notes":"Choose a group; do not mark mastered","timed":false},
+            {"name":"Combinations","status":"Developing","priority":2,"lastStudied":"2026-10-30","notes":"Studied; choose a group when order does not matter. More independent practice needed","timed":false},
             {"name":"Choosing groups","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
             {"name":"Arrangements","status":"Introduced","priority":2,"lastStudied":"2026-10-29","timed":false},
             {"name":"Restricted arrangements","status":"Not studied","priority":2},
@@ -121,8 +121,8 @@
         {
           "name": "F. Probability",
           "topics": [
-            {"name":"Basic probability","status":"Introduced","priority":2,"lastStudied":"2026-10-30","notes":"Basics reviewed; no independent performance evidence yet","timed":false},
-            {"name":"Favorable / total outcomes","status":"Introduced","priority":2,"lastStudied":"2026-10-30","notes":"Basic probability structure reviewed","timed":false},
+            {"name":"Basic probability","status":"Not studied","priority":2},
+            {"name":"Favorable / total outcomes","status":"Not studied","priority":2},
             {"name":"Complementary probability","status":"Not studied","priority":2},
             {"name":"Independent events","status":"Not studied","priority":2},
             {"name":"Dependent events","status":"Not studied","priority":2},
