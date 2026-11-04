@@ -48,7 +48,7 @@
   function render(){
     const completed=new Set(dayState().completed),items=tasks(),count=completed.size,xp=totalXp(),level=Math.floor(xp/150)+1,remaining=150-(xp%150);
     list.innerHTML=items.map(task=>`<label class="quest ${completed.has(task.id)?'done':''}"><input type="checkbox" data-quest-id="${task.id}" ${completed.has(task.id)?'checked':''}><span><strong>${escapeHtml(task.title)}</strong><p>${escapeHtml(task.detail)}</p><button class="quest-start" type="button" data-quest-start="${task.id}">Start with timer →</button></span></label>`).join('');
-    $('#quest-xp').textContent=`${xp} XP`;$('#quest-level').textContent=`Momentum level ${level} · ${remaining} XP to next`;$('#quest-progress-label').textContent=`${count} of 3 complete`;$('#quest-progress-bar').style.width=`${Math.round(count/3*100)}%`;const currentChain=chain();$('#quest-chain').textContent=`${currentChain}-day quest chain`;
+    $('#quest-xp').textContent=`${xp} XP`;$('#quest-level').textContent=`Momentum level ${level} · ${remaining} XP to next`;$('#quest-progress-label').textContent=`${count} of 3 complete`;$('#quest-progress-bar').style.width=`${Math.round(count/3*100)}%`;const currentChain=chain();$('#quest-chain').textContent=`${currentChain}-day quest chain`;const planSummary=$('#daily-plan-summary');if(planSummary)planSummary.textContent=`Daily plan · ${count} of 3 complete`;
     const messages=['Start with the smallest win. Momentum follows action.','Good start. One action is now evidence.','One win left. Close the loop while it is fresh.','Daily Boost complete — 50 XP earned. You kept the promise to yourself.'];$('#quest-message').textContent=messages[count];$('#quest-message').classList.toggle('complete',count===3);
   }
 
