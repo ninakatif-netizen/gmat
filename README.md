@@ -14,6 +14,8 @@ The optional active-study timer and its Today / Week / All-Time distributions ar
 
 The Daily Boost habit loop lives in [`dist/habit.js`](dist/habit.js) and stores local quest check-offs under `gmat655-habit-v1`. Momentum XP rewards consistency only. It must never modify mastery, readiness, syllabus status, or the mountain.
 
+The Official Guide retry tracker lives in [`dist/retry.js`](dist/retry.js). It derives missed questions from `practiceSessions`, saves retry outcomes locally under `gmat655-og-retry-v1`, and does not change the original question scores or readiness.
+
 After updating the JSON:
 
 1. Confirm it is valid JSON.
