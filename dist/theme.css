@@ -82,3 +82,9 @@ body{
   .hero .timer-btn.primary{background:#e6f3e2;color:#174c3c}
 }
 @media(prefers-reduced-motion:reduce){.nav button,.timer-btn,.tier-filter,.domain-filter,.syllabus-action,.syllabus-topic,.formula-card{transition:none}}
+/* Plan link in the top navigation (separate page, styled like the tab buttons). */
+.nav a{display:inline-flex;align-items:center;border:0;background:transparent;color:var(--muted);padding:10px 17px;border-radius:10px;font-weight:650;white-space:nowrap;text-decoration:none;transition:background .18s ease,color .18s ease}
+.nav a:hover{color:var(--ink);background:var(--surface2)}
+@media(max-width:640px){.nav a{padding:9px 13px}}
+@media(prefers-color-scheme:dark){.nav a:hover{color:#fff}}
+@media(prefers-reduced-motion:reduce){.nav a{transition:none}}
