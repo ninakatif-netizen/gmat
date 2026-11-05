@@ -1,0 +1,73 @@
+/* Daily workspace and the optional study library. */
+:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body.home{margin:0;color:var(--text);font-size:15px;line-height:1.5}
+.home .shell{margin:auto;max-width:1120px}
+.home .topbar,.home .brand,.home .row,.home .section-heading{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.home .brand{justify-content:flex-start}
+.home .brandmark{display:grid;place-items:center;font-weight:800;flex-shrink:0}
+.home .brand strong,.home .brand span{display:block}
+.home .brand span,.home .sub,.home .save-note{color:var(--muted);font-size:13px}
+.home .deadline{text-align:center;min-width:210px}
+.home .deadline strong{display:block;color:var(--red);line-height:1;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.home .deadline span{display:block;margin-top:6px;font-weight:700;text-transform:uppercase}
+.home .nav{display:flex}
+.home .nav a.active{background:var(--ink);color:var(--bg)}
+.home .plan-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
+.home .plan-summary div{padding-left:16px;border-left:2px solid var(--line)}
+.home .plan-summary b,.home .plan-summary span{display:block}
+.home .plan-summary b{font-size:23px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.home .plan-summary span{color:var(--muted);font-size:12px}
+.home .study-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:20px;align-items:start}
+.home .card{background:var(--surface);border:1px solid var(--line)}
+.home h1{font-size:25px;line-height:1.2;letter-spacing:-.04em;margin:7px 0 0}
+.home h2{font-size:19px;line-height:1.3;margin:0}
+.home .eyebrow{color:var(--muted);font-weight:700;text-transform:uppercase}
+.home .section-heading{margin-bottom:17px}
+.home .pill{padding:5px 9px;border-radius:999px;font-size:11px;white-space:nowrap}
+.home .plan-tasks{list-style:none;margin:0;padding:0}
+.home .plan-tasks li{border-top:1px solid var(--line)}
+.home .plan-tasks label{display:grid;grid-template-columns:21px minmax(0,1fr) auto;gap:12px;align-items:start;padding:15px 0;cursor:pointer}
+.home input[type=checkbox]{width:20px;height:20px;margin:2px 0 0;accent-color:var(--green)}
+.home .tt{font-weight:650;line-height:1.4}
+.home .td{display:block;color:var(--muted);font-size:12px;font-weight:400;line-height:1.55;margin-top:4px;overflow-wrap:anywhere}
+.home .th{color:var(--muted);font-size:11px;white-space:nowrap;margin-top:3px}
+.home .checked .tt{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--green)}
+.home .checked .td{opacity:.7}
+.home .save-note{font-size:11px;line-height:1.5;margin:10px 0 0}
+.home .study-timer{margin:0}
+.home .timer-clock{font-size:44px;line-height:1.2;letter-spacing:-.045em;font-weight:750;font-variant-numeric:tabular-nums;margin:18px 0}
+.home .optional{font-size:11px}
+.home button,.home select{font:inherit}
+.home .timer-category{display:block;width:100%;margin:7px 0 12px;border:1px solid var(--line);border-radius:9px;padding:10px;background:var(--surface);color:var(--text)}
+.home .timer-actions{display:flex;gap:8px;flex-wrap:wrap}
+.home .timer-btn{padding:10px 14px;border:1px solid var(--line);border-radius:9px;background:var(--surface2);color:var(--text);font-size:13px;font-weight:650;cursor:pointer}
+.home .timer-btn.primary{background:var(--ink);color:var(--bg);border-color:transparent}
+.home .timer-btn:disabled{display:none}
+.home .timer-status{font-size:11px;min-height:34px;margin:9px 0 0}
+.home .timer-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.home .timer-metric{padding:11px;border-radius:10px}
+.home .timer-metric span,.home .timer-metric b{display:block}
+.home .timer-metric span{font-size:11px;color:var(--muted)}
+.home .timer-metric b{font-variant-numeric:tabular-nums;margin-top:3px}
+.home .timer-history{margin-top:18px;border-top:1px solid var(--line);padding-top:13px;font-size:12px}
+.home summary{cursor:pointer;color:var(--muted);font-weight:600}
+.home .category-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0}
+.home .category-totals span,.home .category-totals b{display:block;font-size:11px}
+.home .category-totals span{color:var(--muted)}
+.home .category-totals b{margin-top:4px}
+.home .session-row{display:grid;grid-template-columns:64px 1fr auto;gap:8px;padding:9px 0;border-top:1px solid var(--line);font-size:11px}
+.home .session-row span:last-child{font-weight:650}
+.home .empty-sessions{color:var(--muted);font-size:12px}
+.home .still-studying{margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);font-size:12px}
+.home .still-studying p{margin:5px 0 12px}
+.home [hidden]{display:none!important}
+.home-footer{color:var(--muted);font-size:11px;margin-top:22px}
+.home a{color:var(--green)}
+.home :is(button,select,input,a,summary):focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.library #today,.library .deadline,.library #progress>:not(.syllabus-card),.library #review>.grid.two>.card,.library #review>.grid.two>.stack>.card:first-child{display:none!important}
+.library #review>.grid.two{display:block}
+.library #progress>.syllabus-card{margin-top:0}
+.library .today-plan-details{display:none}
+@media(max-width:850px){.home .study-layout{grid-template-columns:1fr}.home .plan-summary{gap:10px}.home .plan-summary div{padding-left:10px}}
+@media(max-width:650px){.home .topbar{align-items:stretch;flex-direction:column}.home .brand{align-items:center}.home .nav a{flex:1}.home .plan-summary{margin:20px 0}.home .plan-summary b{font-size:20px}.home .plan-summary span{font-size:10px}.home h1{font-size:22px}.home .th{font-size:10px}.home .plan-tasks label{gap:9px}.home .section-heading{gap:8px}}

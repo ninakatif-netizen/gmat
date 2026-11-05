@@ -100,7 +100,7 @@
   }
 
   function renderMainStudyTotals(now){
-    if(!progressData)return;
+    if(!progressData||!$('#week-target'))return;
     const totalsByDate={},studyDays=new Set(progressData.studyDays||[]);
     progressData.studySessions.forEach(session=>{totalsByDate[session.date]=(totalsByDate[session.date]||0)+session.minutes*60000;studyDays.add(session.date)});
     recordsWithActive(now).filter(session=>session.source!=='progress').forEach(session=>{totalsByDate[session.date]=(totalsByDate[session.date]||0)+session.activeDurationMs;if(session.activeDurationMs>0)studyDays.add(session.date)});
