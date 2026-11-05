@@ -89,6 +89,26 @@ body.home{margin:0;color:var(--text);font-size:15px;line-height:1.5}
 .home .still-studying p{margin:5px 0 12px}
 .home [hidden]{display:none!important}
 .home-footer{color:var(--muted);font-size:11px;margin-top:22px}
+.home .climb-card{margin-top:20px}
+.home .climb-progress{margin:7px 0 0;font-size:12px}
+.home .climb-route{display:block;width:100%;height:auto;max-height:235px;margin-top:12px;overflow:visible}
+.home .climb-slope{fill:var(--green);opacity:.045}
+.home .climb-track,.home .climb-done{fill:none;stroke:var(--line);stroke-width:7;stroke-linecap:round}
+.home .climb-done{stroke:var(--green)}
+.home .climb-marker circle{fill:var(--surface);stroke:var(--line);stroke-width:2.5}
+.home .climb-marker text{fill:var(--muted);font:700 11px system-ui}
+.home .climb-marker.is-current circle{fill:var(--green);stroke:var(--surface);stroke-width:4}
+.home .climb-marker.is-current text{fill:var(--surface)}
+.home .climb-marker.is-reached circle,.home .climb-marker.is-selected:not(.is-current) circle{stroke:var(--green)}
+.home .climb-label{fill:var(--muted);font:700 11px system-ui;letter-spacing:.08em}
+.home .climb-camps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:8px}
+.home .climb-camps button{min-height:44px;padding:9px 5px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--muted);font-size:12px;cursor:pointer}
+.home .climb-camps button.is-current{font-weight:750;color:var(--green)}
+.home .climb-camps button[aria-pressed=true]{border-color:var(--green);background:var(--surface2);color:var(--text)}
+.home .climb-detail{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
+.home .climb-detail p{color:var(--muted);font-size:12px;line-height:1.6;margin:6px 0 0;max-width:760px}
+.home .climb-detail .climb-next{color:var(--green);font-weight:650}
+@media(max-width:650px){.home .climb-camps{gap:5px}.home .climb-camps button{font-size:11px}.home .climb-route{max-height:none}.home .climb-card .row{align-items:flex-start}.home .climb-marker text{font-size:10px}}
 .home a{color:var(--green)}
 .home :is(button,select,input,a,summary):focus-visible{outline:3px solid var(--green);outline-offset:3px}
 .library #today,.library .deadline,.library #progress>:not(.syllabus-card),.library #review>.grid.two>.card,.library #review>.grid.two>.stack>.card:first-child{display:none!important}
