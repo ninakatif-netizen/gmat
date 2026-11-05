@@ -6,7 +6,7 @@
   <meta name="description" content="Najlae's GMAT daily study plan and active-study timer">
   <title>GMAT · Today</title>
   <link rel="stylesheet" href="./theme.css?v=simple-20261105">
-  <link rel="stylesheet" href="./home.css?v=simple-20261105">
+  <link rel="stylesheet" href="./home.css?v=study-rhythm-20261105">
 </head>
 <body class="home">
   <main class="shell">
@@ -40,6 +40,23 @@
         <div class="still-studying" id="still-studying" hidden><strong>Still studying?</strong><p>Confirm to continue counting active time.</p><div class="timer-actions"><button class="timer-btn primary" id="timer-confirm" type="button">Yes, continue</button><button class="timer-btn" id="timer-confirm-pause" type="button">Pause</button></div></div>
         <div class="timer-metrics"><div class="timer-metric"><span>Today</span><b id="timer-today">0m</b></div><div class="timer-metric"><span>This week</span><b id="timer-week">0m</b></div></div>
         <p class="save-note" id="timer-week-goal"></p>
+        <section class="study-rhythm" id="study-rhythm" aria-labelledby="study-rhythm-heading">
+          <div class="row"><h3 id="study-rhythm-heading">Your week</h3><span id="study-days-count" class="sub">0 / 7 days</span></div>
+          <div class="study-days" id="study-days" role="group" aria-label="Select a day to see its study time"></div>
+          <p class="study-day-detail" id="study-day-detail" role="status"></p>
+          <svg class="study-chart" viewBox="0 0 320 130" role="img" aria-labelledby="study-chart-title" aria-describedby="study-chart-description">
+            <title id="study-chart-title">Study time building this week</title>
+            <desc id="study-chart-description">Logged active study time across the week.</desc>
+            <g class="study-chart-grid"><path d="M32 16H306 M32 62H306 M32 108H306"/></g>
+            <text class="study-chart-label" id="study-chart-max" x="0" y="20">28h</text><text class="study-chart-label" x="0" y="111">0h</text>
+            <polyline class="study-chart-goal" id="study-chart-goal" points=""/>
+            <polygon class="study-chart-area" id="study-chart-area" points=""/>
+            <polyline class="study-chart-line" id="study-chart-line" points=""/>
+            <g id="study-chart-dots"></g><circle class="study-chart-selected" id="study-chart-selected" r="5" cx="32" cy="108"/>
+          </svg>
+          <div class="study-chart-legend"><span><i class="legend-actual"></i>Time studied</span><span id="study-goal-legend"><i class="legend-goal"></i>Goal pace</span></div>
+          <p class="save-note" id="study-week-feedback">A little time today starts the line.</p>
+        </section>
         <details class="timer-history"><summary>Recent sessions &amp; category totals</summary><div class="category-totals"><div><span>Quant</span><b id="timer-quant">0m</b></div><div><span>Verbal</span><b id="timer-verbal">0m</b></div><div><span>Data Insights</span><b id="timer-di">0m</b></div></div><div id="timer-session-list" class="empty-sessions">No timer sessions yet.</div></details>
       </aside>
     </div>
@@ -47,7 +64,8 @@
   </main>
   <script src="./plan-data.js?v=simple-20261105"></script>
   <script src="./plan.js?v=simple-20261105"></script>
-  <script src="./timer.js?v=simple-20261105"></script>
+  <script src="./study-visuals.js?v=study-rhythm-20261105"></script>
+  <script src="./timer.js?v=study-rhythm-20261105"></script>
   <script src="./home.js?v=simple-20261105"></script>
 </body>
 </html>

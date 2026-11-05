@@ -16,6 +16,8 @@ Keep the home page focused on the daily plan, timer, and small progress summary.
 
 The active-study timer is implemented in [`dist/timer.js`](dist/timer.js). It stores timer state and completed timer sessions in the browser under `gmat655-study-timer-v1`; it must never modify mastery, readiness, syllabus coverage, or mountain progress.
 
+`dist/study-visuals.js` restores the seven day squares and draws cumulative active study time against the weekly goal pace. It receives the timer's existing records through `gmat:study-time-updated`, uses the same Sunday–Saturday week as the timer totals, and creates no separate storage. A dot marks study days with no logged duration; those days add no hours to the line.
+
 The legacy Daily Boost script (`dist/habit.js`) is no longer loaded. Its historical browser storage is preserved.
 
 The library's Official Guide retry tracker lives in [`dist/retry.js`](dist/retry.js). It derives missed questions from `practiceSessions`, saves retry outcomes locally under `gmat655-og-retry-v1`, and does not change the original question scores or readiness.

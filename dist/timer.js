@@ -81,6 +81,7 @@
     const records=recordsWithActive(now),todayKey=localKey(new Date(now)),weekStart=new Date(now);weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-weekStart.getDay());const weekKey=localKey(weekStart);
     const total=predicate=>records.filter(predicate).reduce((sum,session)=>sum+session.activeDurationMs,0);
     elements.today.textContent=formatDuration(total(session=>session.date===todayKey));elements.week.textContent=formatDuration(total(session=>session.date>=weekKey&&session.date<=todayKey));elements.quant.textContent=formatDuration(total(session=>session.category==='Quant'));elements.verbal.textContent=formatDuration(total(session=>session.category==='Verbal'));elements.di.textContent=formatDuration(total(session=>session.category==='Data Insights'));
+    window.dispatchEvent(new CustomEvent('gmat:study-time-updated',{detail:{records,now,studyDays:progressData?.studyDays||[],weeklyTargetMinutes:progressData?.weeklyTargetMinutes}}));
   }
 
   function exactPercentages(values){
